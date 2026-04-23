@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+tests/out/*.svg
+homm2_save.json
+.DS_Store

@@ -1,0 +1,56 @@
+Screen { layout: horizontal; }
+
+#left { width: 1fr; height: 100%; }
+
+#right {
+    width: 36;
+    height: 100%;
+    border-left: solid rgb(60,60,70);
+    background: rgb(14,14,18);
+}
+
+AdventureView, CombatView {
+    height: 1fr;
+    border: none;
+    background: rgb(8,10,14);
+}
+
+#bottom_log {
+    height: 10;
+    border-top: solid rgb(60,60,70);
+    background: rgb(10,12,16);
+}
+
+.panel {
+    padding: 0 1;
+    background: rgb(14,14,18);
+    color: rgb(220,220,220);
+}
+
+.panel-title {
+    background: rgb(30,30,38);
+    color: rgb(255,230,120);
+    padding: 0 1;
+    text-style: bold;
+}
+
+TownScreen, CombatScreen {
+    align: center middle;
+    background: rgba(0,0,0,0.6);
+}
+
+#town_box, #combat_box {
+    width: 120;
+    height: 44;
+    background: rgb(18,18,24);
+    border: thick rgb(120,100,60);
+    padding: 1 2;
+}
+
+#help_box {
+    width: 70;
+    height: 28;
+    background: rgb(18,18,24);
+    border: thick rgb(100,120,160);
+    padding: 1 2;
+}

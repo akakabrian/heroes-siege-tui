@@ -1,0 +1,18 @@
+[project]
+name = "homm2-tui"
+version = "0.1.0"
+description = "Terminal-native Heroes of Might & Magic II — adventure map + hex tactical combat + town management in the shell"
+requires-python = ">=3.10"
+dependencies = [
+    "textual>=0.80,<10",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["homm2_tui"]
+
+[tool.setuptools.package-data]
+homm2_tui = ["tui.tcss"]
