@@ -9,7 +9,7 @@ bootstrap:
 	@echo "==> no upstream to fetch (clean-room Python reimpl; see DECISIONS.md §1)"
 
 engine:
-	@echo "==> engine target is a no-op for homm2-tui"
+	@echo "==> engine target is a no-op for heroes-siege-tui"
 
 venv: .venv/bin/python
 .venv/bin/python:
@@ -30,4 +30,4 @@ perf: venv
 	.venv/bin/python -m tests.perf
 
 clean:
-	rm -rf .venv homm2_tui/__pycache__ tests/__pycache__
+	rm -rf .venv heroes_siege_tui/__pycache__ tests/__pycache__

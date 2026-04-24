@@ -181,4 +181,4 @@ Greyspire, P2 (Necromancer, blue) in SE corner town Darkhold. Gold
 pile + ore mine in neutral centre. One neutral monster stack guarding
 a treasure in the middle. Goal: capture enemy town.
 
-Hand-authored in `homm2_tui/scenarios.py`; no file parsing.
+Hand-authored in `heroes_siege_tui/scenarios.py`; no file parsing.

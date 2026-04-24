@@ -1,4 +1,4 @@
-"""Hot-path micro-benchmarks for homm2-tui.
+"""Hot-path micro-benchmarks for heroes-siege-tui.
 
 Prints mean / p95 / p99 timings for: adventure render_line, combat
 render_line, combat engine `act_move_attack`, hero movement range
@@ -27,16 +27,16 @@ def bench(name: str, fn, iters: int = 200) -> None:
 
 
 def main() -> int:
-    from homm2_tui.combat import Combat
-    from homm2_tui.game import ArmyStack
-    from homm2_tui.scenarios import new_game
+    from heroes_siege_tui.combat import Combat
+    from heroes_siege_tui.game import ArmyStack
+    from heroes_siege_tui.scenarios import new_game
 
-    print("homm2-tui perf bench")
+    print("heroes-siege-tui perf bench")
     print("----------------------")
 
     # Adventure-map render. We can render lines without mounting the App
     # because AdventureView only relies on self.size at render time.
-    from homm2_tui.app import AdventureView
+    from heroes_siege_tui.app import AdventureView
     g = new_game("dawn_assault")
     av = AdventureView(g)
     # Spoof size.
@@ -50,7 +50,7 @@ def main() -> int:
     bench("adventure render full map", adv_render_all, iters=100)
 
     # Combat render.
-    from homm2_tui.app import CombatView
+    from heroes_siege_tui.app import CombatView
     c = Combat.begin([ArmyStack("Pikeman", 50)], [ArmyStack("Skeleton", 50)])
     cv = CombatView(c)
     cv._size = Size(24, 20)  # type: ignore[attr-defined]

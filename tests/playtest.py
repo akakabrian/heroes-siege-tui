@@ -13,7 +13,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from homm2_tui.app import HoMM2App, TownScreen
+from heroes_siege_tui.app import HoMM2App, TownScreen
 
 OUT = Path(__file__).resolve().parent / "out"
 OUT.mkdir(exist_ok=True)

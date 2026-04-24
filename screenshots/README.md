@@ -1,4 +1,4 @@
-# homm2-tui screenshots
+# heroes-siege-tui screenshots
 
 ![hero](hero.svg)
 

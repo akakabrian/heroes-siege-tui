@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import argparse
 
-from homm2_tui.app import run
+from heroes_siege_tui.app import run
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(prog="homm2-tui")
+    p = argparse.ArgumentParser(prog="heroes-siege-tui")
     p.add_argument("scenario", nargs="?", default="dawn_assault",
                    help="scenario key (default: dawn_assault)")
     p.add_argument("--vs-ai", action="store_true", help="P2 is AI (default)")

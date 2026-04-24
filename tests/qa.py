@@ -1,4 +1,4 @@
-"""Headless QA driver for homm2-tui.
+"""Headless QA driver for heroes-siege-tui.
 
 Each scenario runs in a fresh `HoMM2App` via `App.run_test()`, captures
 an SVG screenshot, and reports pass/fail. Exit code is the failure
@@ -27,11 +27,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Awaitable, Callable
 
-from homm2_tui.app import CombatScreen, HoMM2App, TownScreen
-from homm2_tui.combat import COMBAT_H, COMBAT_W, Combat
-from homm2_tui.content import CREATURES, BUILDINGS
-from homm2_tui.game import ArmyStack, MapObject
-from homm2_tui.scenarios import new_game
+from heroes_siege_tui.app import CombatScreen, HoMM2App, TownScreen
+from heroes_siege_tui.combat import COMBAT_H, COMBAT_W, Combat
+from heroes_siege_tui.content import CREATURES, BUILDINGS
+from heroes_siege_tui.game import ArmyStack, MapObject
+from heroes_siege_tui.scenarios import new_game
 
 OUT = Path(__file__).resolve().parent / "out"
 OUT.mkdir(exist_ok=True)
@@ -333,7 +333,7 @@ async def s_headless_state_no_crash(app, pilot):
 
 async def s_combat_view_renders(app, pilot):
     """Combat view hex render produces styled output."""
-    from homm2_tui.app import CombatView
+    from heroes_siege_tui.app import CombatView
     c = Combat.begin([ArmyStack("Peasant", 5)], [ArmyStack("Skeleton", 5)])
     v = CombatView(c)
     # Virtual size set; we can render a line even without mount (no size

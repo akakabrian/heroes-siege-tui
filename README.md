@@ -1,4 +1,4 @@
-# homm2-tui
+# heroes-siege-tui
 The age of heroes begins.
 
 ![Hero](screenshots/hero.svg)
@@ -13,8 +13,8 @@ Six factions. Seven artifacts. One enchanted world. Recruit heroes, build castle
 
 ## Install & Run
 ```bash
-git clone https://github.com/akakabrian/homm2-tui
-cd homm2-tui
+git clone https://github.com/akakabrian/heroes-siege-tui
+cd heroes-siege-tui
 make
 make run
 ```
