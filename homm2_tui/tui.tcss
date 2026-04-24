@@ -3,7 +3,9 @@ Screen { layout: horizontal; }
 #left { width: 1fr; height: 100%; }
 
 #right {
-    width: 36;
+    width: 1fr;
+    min-width: 24;
+    max-width: 32;
     height: 100%;
     border-left: solid rgb(60,60,70);
     background: rgb(14,14,18);

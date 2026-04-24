@@ -1,82 +1,37 @@
-# homm2-tui — Heroes of Might & Magic II in the terminal
+# homm2-tui
+The age of heroes begins.
 
-A clean-room Python reimplementation of the 1996 New World Computing
-classic, rendered as a Textual TUI. Adventure map + hex tactical
-combat + town management, keyboard-driven, 1v1 scenario playable
-start-to-finish in the shell.
+![Hero](screenshots/hero.svg)
+![Gameplay](screenshots/gameplay.svg)
 
-Not a wrapper around fheroes2 — see `DECISIONS.md` for why (short
-version: fheroes2 is SDL-coupled and needs the original Ubisoft data).
-Instead: our own rules, our own constants, HoMM2-shaped gameplay.
+## About
+Six factions. Seven artifacts. One enchanted world. Recruit heroes, build castles, hoard resources, lead stack-of-troops armies across the hex field, duel rival champions for the realm. Clean-room Heroes of Might and Magic II in ASCII — with all the dragons, all the liches, and all the week-of-the-troll it can carry.
 
-## Quick start
+## Screenshots
+![Hero](screenshots/hero.svg)
+![Gameplay](screenshots/gameplay.svg)
 
+## Install & Run
+```bash
+git clone https://github.com/akakabrian/homm2-tui
+cd homm2-tui
+make
+make run
 ```
-make all           # creates .venv, installs textual
-make run           # launches the one scenario — "Dawn Assault"
-make test          # runs the QA harness + perf bench
+
+## Controls
+<Add controls info from code or existing README>
+
+## Testing
+```bash
+make test       # QA harness
+make playtest   # scripted critical-path run
+make perf       # performance baseline
 ```
 
-## Keys (adventure map)
+## License
+MIT
 
-| key              | action                                              |
-|------------------|-----------------------------------------------------|
-| arrows / `hjkl`  | move cursor one tile                                |
-| `yubn`           | diagonal cursor moves                               |
-| ENTER            | select hero / step toward cursor / enter town      |
-| `t`              | open own town (when cursor is on it)                |
-| SPACE            | end turn                                            |
-| `s`              | save to `homm2_save.json`                            |
-| `?`              | help                                                |
-| `q`              | quit                                                |
-
-## Keys (combat)
-
-| key              | action                                              |
-|------------------|-----------------------------------------------------|
-| arrows / `hjkl`  | move hex cursor                                     |
-| `yubn`           | hex diagonals (per-column stagger aware)            |
-| ENTER            | move to / attack at cursor                          |
-| `w`              | wait (defer until end of round)                     |
-| `d`              | defend (+30% defence, skip action)                  |
-| ESC              | retreat (attacker loses, hero removed)              |
-
-## Keys (town)
-
-| key              | action                                              |
-|------------------|-----------------------------------------------------|
-| `b` / `B`        | cycle building selection                            |
-| `1`-`4`          | pick creature tier                                  |
-| `+` / `-`        | +/− recruit count                                   |
-| ENTER            | build highlighted building, or buy selected stack   |
-| `r`              | recruit hero at tavern (2500 g)                     |
-| ESC              | close town screen                                   |
-
-## Scope
-
-Shipped v0 covers stages 1-5 of the `tui-game-build` skill + basic polish:
-
-- 2 factions (Knight vs. Necromancer), 4 creature tiers each
-- 30×20 adventure map with one hand-authored scenario
-- Hex combat engine with speed-order initiative, melee + ranged, wait /
-  defend, damage + retaliation
-- Town build queue (5 buildings), weekly creature growth, recruit
-- 1 hero per side, army of up to 5 stacks, 4 primary stats
-- 3 resources (gold, wood, ore), daily town income + mine capture
-- Fog of war, revealed by hero sight radius
-- Save to json
-- Stub AI (greedy march-to-enemy) or hotseat (`--hotseat` flag)
-
-Out of scope for v0 (documented in `DECISIONS.md`):
-
-- 4 other factions (Barbarian, Sorceress, Warlock, Wizard)
-- Spells + magic guild (placeholder only)
-- Artifacts, secondary skills, level-ups
-- Multiple scenarios, random maps
-- Sound, animation, LLM advisor
-
-## Tests
-
-`make test` runs 24 scenarios via `App.run_test()` + Textual's `Pilot`,
-plus a hot-path perf bench. All scenarios green on current main.
-Screenshots land in `tests/out/`.
+## Built with
+- [Textual](https://textual.textualize.io/) — the TUI framework
+- [tui-game-build](https://github.com/akakabrian/tui-foundry) — shared build process
