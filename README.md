@@ -1,4 +1,7 @@
 # heroes-siege-tui
+
+> Inspired by Heroes of Might and Magic II (1996, New World Computing). Trademarks belong to their respective owners. Unaffiliated fan project.
+
 The age of heroes begins.
 
 ![Hero](screenshots/hero.svg)
